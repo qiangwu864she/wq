@@ -59,7 +59,13 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <!--吴强根据ChatGPT的提示手动加的-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version> <!-- 或者其他支持 Java 11 的版本 -->
+                    <!-- 其他配置... -->
+                </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
@@ -95,6 +101,16 @@
                             <ARTIFACT_NAME>target/${project.build.finalName}</ARTIFACT_NAME>
                             <EXPOSED_PORT>${docker.image.exposed.port}</EXPOSED_PORT>
                         </buildArgs>
+                    </configuration>
+                </plugin>
+                <!--吴强根据ChatGPT的指导添加的-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version> <!-- 或者其他支持 Java 11 的版本 -->
+                    <configuration>
+                        <source>11</source>
+                        <target>11</target>
                     </configuration>
                 </plugin>
             </plugins>
