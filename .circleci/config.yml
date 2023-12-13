@@ -89,6 +89,9 @@ commands:
       # push docker image to docker hub
       - run: mvn dockerfile:push -Ddocker.image.tag=Build-${CIRCLE_BUILD_NUM}-CI
 
+      #add by wuqiang
+      - run: echo "Docker image tag" {Build-${CIRCLE_BUILD_NUM} "-CI"
+
       # store raw content of src code
       - store_artifacts:
           path: target/classes
